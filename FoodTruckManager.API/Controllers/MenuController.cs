@@ -1,4 +1,5 @@
-﻿using FoodTruckManager.Shared.Menu;
+﻿using System.Net;
+using FoodTruckManager.Shared.Menu;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FoodTruckManager.API.Controllers;
@@ -15,6 +16,7 @@ public class MenuController : ControllerBase
         _menuItems= new() { new MenuItem(){Name = "Fries", Allergies = new List<string>(){"none"}} };
         _menus = new() { new Menu() { MenuName = "Lunch", MenuItems = _menuItems } };
     }
+    
     // GET: api/menu
     [HttpGet]
     public ActionResult<Menu> GetManus()
@@ -54,6 +56,23 @@ public class MenuController : ControllerBase
         _menus.Add(menu);
 
         return CreatedAtAction(nameof(Menu), new { id = menu.Id }, menu);
+    }
+    
+    [HttpPost("/MenuItem")] 
+    public ActionResult<MenuItem> CreateMenu(MenuItem menuItem)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        _menuItems.Add(menuItem);
+        var actionResult = new AcceptedResult()
+        {
+            StatusCode = StatusCodes.Status201Created,
+            Value = menuItem
+        };
+        return actionResult;
     }
 
     // PUT: api/menu/{id}

@@ -9,3 +9,4 @@ C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\
 C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\net8.0\refint\FoodTruckManager.Shared.dll
 C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\net8.0\FoodTruckManager.Shared.pdb
 C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\net8.0\ref\FoodTruckManager.Shared.dll
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\net8.0\FoodTruckManager.Shared.sourcelink.json

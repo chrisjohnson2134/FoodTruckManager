@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FoodTruckManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e677d893a0b475fa00eddc6b4cf93de24a49b1cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("FoodTruckManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FoodTruckManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

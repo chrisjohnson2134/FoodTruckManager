@@ -33,3 +33,4 @@ C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.API\obj\Debug\net
 C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.API\obj\Debug\net8.0\FoodTruckManager.API.pdb
 C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.API\obj\Debug\net8.0\FoodTruckManager.API.genruntimeconfig.cache
 C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.API\obj\Debug\net8.0\ref\FoodTruckManager.API.dll
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.API\obj\Debug\net8.0\FoodTruckManager.API.sourcelink.json

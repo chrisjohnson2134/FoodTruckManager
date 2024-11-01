@@ -31,3 +31,4 @@ C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager\bin\Debug\net8.0\
 C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager\bin\Debug\net8.0\FoodTruckManager.Shared.pdb
 C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager\obj\Debug\net8.0\FoodTruckManager.csproj.AssemblyReference.cache
 C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager\obj\Debug\net8.0\FoodTruc.6BB1EB53.Up2Date
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager\obj\Debug\net8.0\FoodTruckManager.sourcelink.json
