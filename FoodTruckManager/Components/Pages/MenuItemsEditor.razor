@@ -1,0 +1,155 @@
+﻿@page "/MenuItemEditor"
+@using FoodTruckManager.Shared.Menu
+@rendermode InteractiveServer
+
+<PageTitle>Menu Items Editor</PageTitle>
+
+<NavLink class="nav-link" href="MenuManager">
+    back
+</NavLink>
+<h1>Menu Items Manager</h1>
+<h4>Menu Items</h4>
+
+
+<div class="d-flex justify-content-start mb-4">
+    <button class="btn btn-primary" @onclick="ShowAddItemForm">
+        <i class="fas fa-plus"></i>
+        <span class="ms-1">Add Menu Item</span>
+    </button>
+</div>
+
+<form @onsubmit="HandleSubmit" class="mb-4">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="search" 
+                       class="form-control" 
+                       placeholder="Search menu items..." 
+                       @bind-value="searchTerm" 
+                       @bind-value:event="oninput"
+                       aria-label="Search menu items" />
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-search"></i>
+                    <span class="ms-1">Search</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <select class="form-select" @bind="selectedCategory" aria-label="Select category">
+                <option value="">All Categories</option>
+                @foreach (var category in categories)
+                {
+                    <option value="@category">@category</option>
+                }
+            </select>
+        </div>
+    </div>
+</form>
+
+@foreach (var menuItem in MenuItems)
+{
+        <div class="row mb-3 align-items-center">
+            <div class="col-2">
+                <img src="https://placehold.co/300x300?text=@menuItem.Name" class="img-fluid rounded" alt="@menuItem.Name">
+            </div>
+            <div class="col">
+                <h5 class="mb-2">@menuItem.Name</h5>
+                <div class="col d-flex flex-wrap gap-2">
+                    <label>Allergies:</label>
+                    @foreach (var allergy in @menuItem.Allergies)
+                    {
+                        <span class="badge bg-info bg-opacity-25 text-dark rounded-pill px-3 py-2">@allergy</span>
+                    }
+                </div>
+            </div>
+        </div>
+}
+
+
+
+@if (showForm)
+{
+    <div class="modal-backdrop fade show"></div>
+    <div class="modal d-block" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Menu Item</h5>
+                    <button type="button" class="btn-close" @onclick="HideAddItemForm"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="itemName" class="form-label">Item Name</label>
+                            <input type="text" class="form-control" id="itemName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemCategory" class="form-label">Category</label>
+                            <select class="form-select" id="itemCategory">
+                                @foreach (var category in categories)
+                                {
+                                    <option value="@category">@category</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemPrice" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="itemPrice" step="0.01">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @onclick="HideAddItemForm">Close</button>
+                    <button type="button" class="btn btn-primary">Save Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<MenuItem> MenuItems { get; set; } = new();
+
+    private string searchTerm = "";
+    private string selectedCategory = "";
+    private bool showForm = false;
+    //private List<OrderItem> MenuItemsList = new List<OrderItem>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        HttpClient _httpClient = new HttpClient();
+        MenuItems = await _httpClient.GetFromJsonAsync<List<MenuItem>>("https://localhost:7120/menuItems");
+    }
+
+    // Example categories - replace with your actual data source
+    private List<string> categories = new()
+    {
+        "Appetizers",
+        "Main Courses",
+        "Desserts",
+        "Beverages"
+    };
+
+    private async Task HandleSubmit(EventArgs e)
+    {
+        await SearchItems();
+    }
+
+    private async Task SearchItems()
+    {
+        // TODO: Implement your search logic here
+        // Example:
+        // var filteredItems = await MenuService.SearchItems(searchTerm, selectedCategory);
+    }
+    
+    private void ShowAddItemForm()
+    {
+        showForm = true;
+    }
+
+    private void HideAddItemForm()
+    {
+        showForm = false;
+    }
+
+}

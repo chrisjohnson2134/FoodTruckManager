@@ -1,0 +1,11 @@
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\bin\Debug\net8.0\FoodTruckManager.Shared.deps.json
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\bin\Debug\net8.0\FoodTruckManager.Shared.dll
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\bin\Debug\net8.0\FoodTruckManager.Shared.pdb
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\net8.0\FoodTruckManager.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\net8.0\FoodTruckManager.Shared.AssemblyInfoInputs.cache
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\net8.0\FoodTruckManager.Shared.AssemblyInfo.cs
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\net8.0\FoodTruckManager.Shared.csproj.CoreCompileInputs.cache
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\net8.0\FoodTruckManager.Shared.dll
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\net8.0\refint\FoodTruckManager.Shared.dll
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\net8.0\FoodTruckManager.Shared.pdb
+C:\Users\chris\RiderProjects\FoodTruckManager\FoodTruckManager.Shared\obj\Debug\net8.0\ref\FoodTruckManager.Shared.dll

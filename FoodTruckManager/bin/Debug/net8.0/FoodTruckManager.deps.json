@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "FoodTruckManager/1.0.0": {
+        "dependencies": {
+          "FoodTruckManager.Shared": "1.0.0"
+        },
+        "runtime": {
+          "FoodTruckManager.dll": {}
+        }
+      },
+      "FoodTruckManager.Shared/1.0.0": {
+        "runtime": {
+          "FoodTruckManager.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FoodTruckManager/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FoodTruckManager.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

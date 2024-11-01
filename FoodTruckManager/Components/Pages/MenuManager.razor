@@ -1,0 +1,35 @@
+﻿@page "/MenuManager"
+@rendermode InteractiveServer
+@inject NavigationManager _navigationManager;
+
+
+<div class="container mt-4">
+    <div class="row">
+        
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <img src="https://placehold.co/400x300?text=Menu+Items" class="img-fluid rounded" alt="Menu Items" @onclick="MenuItemEditorClick">
+            <h4 class="mt-2">Easy Menu Management</h4>
+            <p>Update your menu items and prices instantly</p>
+        </div>
+        <div class="col-md-4">
+            <img src="https://placehold.co/400x300?text=Menus" class="img-fluid rounded" alt="Order Processing">
+            <h4 class="mt-2">Streamlined Orders</h4>
+            <p>Process orders quickly and efficiently</p>
+        </div>
+        <div class="col-md-4">
+            <img src="https://placehold.co/400x300?text=Analytics" class="img-fluid rounded" alt="Analytics Dashboard">
+            <h4 class="mt-2">Real-time Analytics</h4>
+            <p>Track your business performance live</p>
+        </div>
+    </div>
+</div>
+
+@code {
+    private void MenuItemEditorClick()
+    {
+        _navigationManager.NavigateTo("MenuItemEditor");
+    }
+}
