@@ -1,4 +1,6 @@
 ﻿@page "/"
+@using FoodTruckManager.Shared.Orders
+@using Microsoft.AspNetCore.Mvc
 @rendermode InteractiveServer
 @inject NavigationManager _navigationManager;
 <PageTitle>Food Truck Manager Demo</PageTitle>
@@ -23,8 +25,8 @@
                 <div class="card-body">
                     <h5 class="card-title">Today's Stats</h5>
                     <ul class="list-unstyled">
-                        <li>Orders Today: 0</li>
-                        <li>Revenue Today: $0.00</li>
+                        <li>Orders Today: @OrderTotals</li>
+                        <li>Revenue Today: $@TotalRevenue</li>
                         <li>Popular Items: None yet</li>
                     </ul>
                 </div>
@@ -53,6 +55,20 @@
 
 @code
 {
+    HttpClient _httpClient = new HttpClient();
+    
+    public decimal OrderTotals { get; set; }
+    public decimal TotalRevenue { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        var response = await _httpClient.GetFromJsonAsync<IEnumerable<Order>>("https://localhost:7120/api/Orders");
+        var orders = response.ToList();
+        OrderTotals = orders.Count;
+        TotalRevenue = orders.Sum(t => t.TotalAmount);
+    }
+
     private void MenuManagerClicked()
     {
         _navigationManager.NavigateTo("/MenuManager");

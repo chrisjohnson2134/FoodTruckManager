@@ -1,4 +1,5 @@
-﻿using FoodTruckManager.Shared.Orders;
+﻿using FoodTruckManager.Shared.Menu;
+using FoodTruckManager.Shared.Orders;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FoodTruckManager.API.Controllers;
@@ -8,6 +9,17 @@ namespace FoodTruckManager.API.Controllers;
 public class OrdersController : Controller
 {
     private List<Order> _orders = new();
+
+    public OrdersController()
+    {
+        var order = new Order()
+        {
+            Id = 1,
+            OrderDate = DateTime.Now,
+            Items = new List<OrderItem>(){new OrderItem(){MenuItem = new MenuItem(){Price = 20}, Quantity = 10}}
+        };
+        _orders.Add(order);
+    }
 
     // GET: api/orders
     [HttpGet]
