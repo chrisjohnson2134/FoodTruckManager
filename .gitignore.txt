@@ -1,0 +1,55 @@
+# Ignore build results
+bin/
+obj/
+
+# Rider / IntelliJ IDEs
+.idea/
+.sln.iml
+
+# Visual Studio Code
+.vscode/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userdata
+*.opendb
+*.opendb.settings
+
+# Ride / ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# Auto-generated files
+*.generated.cs
+
+# Ignore by file extension
+**/*.log
+**/*.tlog
+**/*.pdb
+*.cache
+*.bak
+*.swp
+*.tmp
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# ASP.NET Dynamic Datasets
+App_Data/
+
+# Hardcoded symbol files
+.suo
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Azure Functions
+local.settings.json
