@@ -1,0 +1,11 @@
+
+*.cs
+*.bin
+*.json
+*.vsidx
+*.v2
+*.info
+*.cache
+*.props
+*.cs
+*.info
