@@ -9,3 +9,6 @@
 *.props
 *.cs
 *.info
+/FoodTruckManager.API/obj
+/FoodTruckManager.Shared/obj/Debug
+/FoodTruckManager.Shared/obj
