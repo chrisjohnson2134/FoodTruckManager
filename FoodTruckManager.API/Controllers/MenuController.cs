@@ -1,6 +1,8 @@
 ﻿using System.Net;
+using FoodTruckManager.API.Context;
 using FoodTruckManager.Shared.Menu;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FoodTruckManager.API.Controllers;
 
@@ -9,11 +11,11 @@ namespace FoodTruckManager.API.Controllers;
 public class MenuController : ControllerBase
 {
     private List<Menu> _menus;
-    private List<MenuItem> _menuItems;
+    private List<MenuItem> _menuItems= new List<MenuItem>();
 
     public MenuController()
     {
-        _menuItems= new() { new MenuItem(){Name = "Fries", Allergies = new List<string>(){"none"}} };
+
         _menus = new() { new Menu() { MenuName = "Lunch", MenuItems = _menuItems } };
     }
     
@@ -28,7 +30,9 @@ public class MenuController : ControllerBase
     [HttpGet("/menuItems")]
     public async Task<ActionResult<List<MenuItem>>> GetMenuItems()
     {
-        return await Task.FromResult(_menuItems);
+        AppDataContext a = new AppDataContext();
+        _menuItems = await a.MenuItems.ToListAsync();
+        return _menuItems;
     }
 
     // GET: api/menu/{id}
@@ -59,13 +63,16 @@ public class MenuController : ControllerBase
     }
     
     [HttpPost("/MenuItem")] 
-    public ActionResult<MenuItem> CreateMenu(MenuItem menuItem)
+    public ActionResult<MenuItem> CreateMenuItem(MenuItem menuItem)
     {
         if (!ModelState.IsValid)
         {
             return BadRequest(ModelState);
         }
 
+        AppDataContext a = new AppDataContext();
+        a.MenuItems.Add(menuItem);
+        a.SaveChanges();
         _menuItems.Add(menuItem);
         var actionResult = new AcceptedResult()
         {

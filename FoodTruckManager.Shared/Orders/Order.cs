@@ -1,11 +1,13 @@
-﻿namespace FoodTruckManager.Shared.Orders;
+﻿using FoodTruckManager.Shared.Menu;
+
+namespace FoodTruckManager.Shared.Orders;
 
 public class Order
 {
     public int Id { get; set; }
     public DateTime OrderDate { get; set; }
-    public List<OrderItem> Items { get; set; } = new();
+    public List<MenuItem> Items { get; set; } = new();
     public decimal TotalAmount => Items.Sum(item 
-        => item.MenuItem.Price * item.Quantity);
+        => item.Price);
     public OrderStatus Status { get; set; }
 }

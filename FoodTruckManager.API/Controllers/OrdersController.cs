@@ -16,7 +16,7 @@ public class OrdersController : Controller
         {
             Id = 1,
             OrderDate = DateTime.Now,
-            Items = new List<OrderItem>(){new OrderItem(){MenuItem = new MenuItem(){Price = 20}, Quantity = 10}}
+            Items = new List<MenuItem>(){new MenuItem(){Name = "Fries", Price = 1}, new MenuItem(){Name = "Fries", Price = 1}}
         };
         _orders.Add(order);
     }
